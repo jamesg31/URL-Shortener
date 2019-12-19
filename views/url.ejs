@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>URL-Shortener</title>
+</head>
+<body>
+    <main>
+        <form action="/url_response" method="POST">
+            Website: <input type="text" name="url"> <br>
+            Custom URL: <input type="text" name="custom_url"><br>
+            Use Custom URL:<input type="checkbox" name="custom"><button type="submit">Shorten URL</button>
+        </form>
+        <% if (hex != null) { %>
+            <p>Your new shortened link can be found at http://jamesg31.com/<%= hex %></p>
+        <% } %>
+        <% if (error == "inuse") { %>
+            <p>Unfortunatly this custom URL was already in use. Please try again with a different custom URL.</p>
+        <% } %>
+    </main>
+</body>
+</html>
